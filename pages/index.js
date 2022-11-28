@@ -3,7 +3,7 @@ import Image from "next/image";
 // import styles from '../styles/Home.module.css'
 // "../public/assets/SVG/Menu Right.svg";
 import logo from "/public/assets/Cryft_Social_Logo.png";
-export default function Home() {
+function Home() {
   return (
     <div>
       <Head>
@@ -15,3 +15,4 @@ export default function Home() {
     </div>
   );
 }
+export default Home;
