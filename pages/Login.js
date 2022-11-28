@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Logo from "../public/assets/Cryft_Social_Logo.png";
 const Login = () => {
   return (
     <>
@@ -60,7 +61,7 @@ const Login = () => {
                   <Image
                     style={{ overflow: "visible" }}
                     className="hover:animate-wiggle w-100ho"
-                    src="/../public/assets/Cryft_Social_Logo.png"
+                    src={Logo}
                     height="100"
                     width="100"
                     alt="CRYFT SOCIAL LOGO"
