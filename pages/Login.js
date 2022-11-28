@@ -56,13 +56,16 @@ const Login = () => {
                 }}
                 className="w-100"
               >
-                <Image
-                  className="hover:animate-wiggle w-100ho"
-                  src="/../public/assets/Cryft_Social_Logo.png"
-                  height="100"
-                  width="100"
-                  alt="CRYFT SOCIAL LOGO"
-                />
+                <div className="logo-main">
+                  <Image
+                    style={{ overflow: "visible" }}
+                    className="hover:animate-wiggle w-100ho"
+                    src="/../public/assets/Cryft_Social_Logo.png"
+                    height="100"
+                    width="100"
+                    alt="CRYFT SOCIAL LOGO"
+                  />
+                </div>
               </motion.div>
               <motion.h1
                 initial={{

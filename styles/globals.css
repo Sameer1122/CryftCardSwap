@@ -14,7 +14,9 @@ body{
   overflow-x: hidden; */
 }
 /* cursor */
-
+.logo-main > span {
+  overflow: visible !important;
+}
 .cursor {
   height:42px;
   width: 42px;
