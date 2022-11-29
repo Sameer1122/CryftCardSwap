@@ -24,10 +24,8 @@ module.exports = {
           "linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url('../public/assets/Login_Portal_A _Converted_ (1).png')",
         LoginB:
           "linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url('../public/assets/Login_Portal_A _Converted_ (1).png')",
-        Redeem:
-          "linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url('../public/assets//ezgif.com-gif-maker.gif')",
-        Redeem1:
-          "linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url('../public/assets/Main_Background.jpg')",
+        Redeem: "url('../public/assets//ezgif.com-gif-maker.gif')",
+        Redeem1: "url('../public/assets/Main_Background.jpg')",
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],

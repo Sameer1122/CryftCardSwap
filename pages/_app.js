@@ -56,6 +56,9 @@ function MyApp({ Component, pageProps }) {
     <AnimatePresence mode="wait">
       <>
         <motion.img
+          transition={{
+            duration: 0.0000001,
+          }}
           animate="default"
           variants={variants}
           src={"/assets/cursor.gif"}
