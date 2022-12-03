@@ -218,7 +218,7 @@ const Redeem = () => {
           <div
             className={
               hide
-                ? "lg:hidden md:hidden absolute space-y-8 transform translate-x-[100%] text-regal-blue flex flex-col justify-center items-center content-center"
+                ? "lg:hidden md:hidden hidden absolute space-y-8 transform translate-x-[100%] text-regal-blue flex flex-col justify-center items-center content-center"
                 : "hidden"
             }
           >
