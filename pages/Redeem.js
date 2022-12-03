@@ -16,9 +16,12 @@ import { motion } from "framer-motion";
 import RedeemSvg from "../utils/RedeemSvg";
 import MetaMaskButton from "../utils/MetaMaskButton";
 import CenterSvg from "../utils/CenterSvg";
+import MainMobileWallet from "../utils/MainMobileWallet";
+import { useWindowSize } from "../utils/hooks/useWindowResize";
 // import BgVideo from "../public/assets/animation_re_render_ (1).mp4";
 const Redeem = () => {
   const [hide, sethide] = useState(true);
+  const [height, width] = useWindowSize();
   const toggleItem = () => {
     hide ? sethide(false) : sethide(true);
   };
@@ -215,7 +218,7 @@ const Redeem = () => {
           <div
             className={
               hide
-                ? "lg:hidden md:hidden space-y-8 text-regal-blue flex flex-col justify-center items-center content-center"
+                ? "lg:hidden md:hidden absolute space-y-8 transform translate-x-[100%] text-regal-blue flex flex-col justify-center items-center content-center"
                 : "hidden"
             }
           >
@@ -283,10 +286,10 @@ const Redeem = () => {
               opacity: 1,
             }}
             className={
-              "relative z-[1]  lg:h-10 md:h-10 h-24 mb-2 customlg:h-7 custommd:h-0 lg:top-96 md:top-96 top-40 flex justify-center items-center"
+              "relative z-[1]  lg:h-10 md:h-10 h-24 mb-2 customlg:h-7 custommd:h-0 lg:top-[26rem] md:top-[26rem] top-[42%] flex justify-center items-center"
             }
           >
-            <RedeemSvg />
+            {width > 768 ? <RedeemSvg /> : <MainMobileWallet />}
           </motion.div>
           <motion.div
             initial={{
@@ -303,7 +306,7 @@ const Redeem = () => {
             }}
             className={
               hide
-                ? "text-white lg:mt-36 md:mt-36 mt-4 justify-center items-center z-[2] flex flex-col font-Changeling text-sm "
+                ? "text-white lg:mt-[11rem] md:mt-36 mt-4 justify-center md:static  absolute top-[29%] items-center z-[2] flex flex-col font-Changeling text-sm "
                 : "hidden"
             }
           >
@@ -325,18 +328,18 @@ const Redeem = () => {
             </div> */}
             <div className="relative lg:w-fit md:w-fit w-[40%] flex cursor-pointer lg:mt-3 md:mt-3 mt-0">
               {/* <Image layout="" src={img7} /> */}
-              <MetaMaskButton height={48} />
+              <MetaMaskButton height={width > 768 ? 48 : 32} />
             </div>
             <div className="relative flex cursor-pointer lg:text-3xl md:text-3xl text-xl lg:-mt-11 md:-mt-11 -mt-8">
               <p className="cursor-pointer">SUBMIT</p>
             </div>
             <div className="relative lg:flex md:flex hidden cursor-pointer text-sm -mt-11">
-              <p className="ml-96">
+              <p className="ml-[26rem]">
                 *COST ZERO GAS <br /> TO REDEEM
               </p>
             </div>
 
-            <div className="relative lg:flex md:flex hidden text-2xl mt-5 text-white font-Changeling">
+            <div className="relative lg:flex md:flex hidden text-2xl mt-8 text-white font-Changeling">
               <p>CARDS REDEEMED</p>
             </div>
             <div className="relative lg:flex md:flex hidden lg:space-x-10 md:space-x-10 space-x-2 font-Changeling text-white md:text-xl text-sm lg:text-xl tracking-wide mt-4">

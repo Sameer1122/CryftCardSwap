@@ -3,7 +3,7 @@ import React from "react";
 function MainWalletBox() {
   return (
     <svg
-      height={500}
+      height={600}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 537.99 444.56"
     >

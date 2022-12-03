@@ -198,7 +198,7 @@ const Swap = () => {
           <div
             className={
               hide
-                ? "relative z-[1]  lg:h-10 md:h-10 h-24 mb-2 customlg:h-7 custommd:h-0 lg:top-96 md:top-96 top-40 flex justify-center items-center"
+                ? "relative z-[1]  lg:h-10 md:h-10 h-24 mb-2 customlg:h-7 custommd:h-0 lg:top-[26rem] md:top-96 top-40 flex justify-center items-center"
                 : "hidden"
             }
           >

@@ -71,7 +71,7 @@ const WalletBuyCode = () => {
         <div
           className={
             hide
-              ? "text-white lg:mt-36 md:mt-36  mt-4 justify-center items-center z-[2] flex flex-col font-Changeling text-sm "
+              ? "text-white lg:mt-24 md:mt-24  mt-4 justify-center items-center z-[2] flex flex-col gap-4 font-Changeling text-sm "
               : "hidden"
           }
         >

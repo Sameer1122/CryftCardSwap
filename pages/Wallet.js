@@ -8,9 +8,11 @@ import WalletHeader from "./WalletHeader";
 import { motion } from "framer-motion";
 import MainWalletBox from "../utils/MainWalletBox";
 import MetaMaskButton from "../utils/MetaMaskButton";
+import { useWindowSize } from "../utils/hooks/useWindowResize";
 // import BgVideo from "../public/assets/animation_re_render_ (1).mp4";
 const Wallet = () => {
   const [hide, sethide] = useState(true);
+  const [width, height] = useWindowSize();
   const toggleItem = () => {
     hide ? sethide(false) : sethide(true);
   };
@@ -62,17 +64,17 @@ const Wallet = () => {
           <div
             className={
               hide
-                ? "z-[1] relative h-full w-full flex flex-col lg:mt-0 customlg:mt-0 custommd:mt-20 items-center justify-center"
+                ? "z-[1] relative h-full w-full flex flex-col lg:mt-[6rem] customlg:mt-0 custommd:mt-20 items-center justify-center"
                 : "hidden"
             }
           >
             <MainWalletBox />
-            <div className="absolute">
+            <div className="absolute ml-8 flex flex-col gap-4 ">
               <div className="lg:text-[1.7rem] md:text-[1.7rem] sm:text-lg text-sm lg:ml-40 md:ml-40 ml-40 mt-1">
                 <p> TOKEN WALLET</p>
               </div>
               <div className=" flex flex-col justify-center items-start ml-2">
-                <div className="mt-5 flex lg:space-x-16 md:space-x-16 space-x-12">
+                <div className="mt-5 flex lg:space-x-32 md:space-x-16 space-x-12">
                   <div className="relative flex flex-col lg:w-52 md:w-52 sm:w-44  w-28 justify-center items-center">
                     <MetaMaskButton height={80} />
                     <div className="absolute -mt-16 lg:text-sm md:text-sm sm:text-sm text-xs tracking-wider">
@@ -94,7 +96,7 @@ const Wallet = () => {
                 </div>
               </div>
               <div className=" flex flex-col lg:mt-2 md:mt-2 sm:mt-2 mt-1  justify-center items-start ml-2">
-                <div className=" flex  lg:space-x-16 md:space-x-16 space-x-12">
+                <div className=" flex  lg:space-x-32 md:space-x-16 space-x-12">
                   <div className="relative flex lg:w-40 md:w-40 sm:w-36 w-28 flex-col justify-center items-center">
                     <MetaMaskButton height={40} />
                     <Link href={"/WalletSend"}>
@@ -116,7 +118,7 @@ const Wallet = () => {
                 </div>
               </div>
               <div className=" flex flex-col justify-center items-start ml-2">
-                <div className="lg:mt-2 md:mt-2 sm:mt-2 mt-1  flex  lg:space-x-20 md:space-x-20 space-x-12">
+                <div className="lg:mt-2 md:mt-2 sm:mt-2 mt-1  flex  lg:space-x-32 md:space-x-20 space-x-12">
                   <div className="relative flex flex-col lg:w-52 md:w-52 sm:w-44 w-28 justify-center items-center">
                     <MetaMaskButton height={60} />
                     <Link href={"/WalletBalance"}>
@@ -134,7 +136,7 @@ const Wallet = () => {
                 </div>
               </div>
               <div className=" flex flex-col justify-center items-start ml-2">
-                <div className="lg:mt-2 md:mt-2 sm:mt-2 mt-1  flex  lg:space-x-20 md:space-x-20 space-x-12">
+                <div className="lg:mt-2 md:mt-2 sm:mt-2 mt-1  flex  lg:space-x-32 md:space-x-20 space-x-12">
                   <div className="relative flex flex-col lg:w-52 md:w-52 sm:w-44 w-32 justify-center items-center">
                     <MetaMaskButton height={60} />
                     <Link href={"/WalletCollection"}>
@@ -151,7 +153,7 @@ const Wallet = () => {
                 </div>
               </div>
               <div className=" flex flex-col justify-center items-start ml-2">
-                <div className="lg:mt-2 md:mt-2 sm:mt-2 mt-1 flex space-x-2">
+                <div className="lg:mt-2 md:mt-2 sm:mt-2 mt-1 flex space-x-32">
                   <div className="relative flex flex-col lg:w-52 md:w-52 sm:w-44 w-32 justify-center items-center">
                     <MetaMaskButton height={60} />
 
