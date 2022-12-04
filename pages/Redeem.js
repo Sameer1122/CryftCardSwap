@@ -254,7 +254,7 @@ const Redeem = () => {
                   <p className="cursor-pointer z-[1000]">REDEEM</p>
                 </Link>
               </div>
-              <div className="tracking-wide text-xs flex flex-col justify-center items-center absolute top-14">
+              <div className="tracking-wide text-xs flex flex-col justify-centerr items-center absolute top-14">
                 <p className="text-regal-blue">WALLET ADDRESS </p>
                 <p className=" absolute top-4">0X127665848616841516841556</p>
               </div>
