@@ -7,7 +7,7 @@ const Login = () => {
   return (
     <>
       <Link href="/LoginB">
-        <div className="bg-Login md:h-[100vh] bg-cover bg-center bg-no-repeat   flex flex-col ">
+        <div className="bg-Login h-[100vh] bg-cover bg-center bg-no-repeat   flex flex-col ">
           <div className="text-white text-center md:w-[50%] w-[75%] m-auto justify-center md:py-0 py-12 items-center">
             <div className="lg:mt-16 md:mt-20 mt-20">
               <motion.h1

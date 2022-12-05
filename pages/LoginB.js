@@ -234,7 +234,7 @@ const LoginB = () => {
                       <p className="text-xs">NEW WALLETS VIA</p>
                       <p className="text-xs">MAGIC LINK</p>
                       <p className="text-xs">SERVICE</p>
-                      <div className="relative left-[77%] tracking-wider text-xs -rotate-45 -top-14 overflow-hidden">
+                      <div className="relative left-[80%] tracking-wider text-xs -rotate-45 -top-16 overflow-hidden">
                         <p className=" right-4">VERSION</p>
                         <p className=" relative right-0">0.0.0.0</p>
                       </div>

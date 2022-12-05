@@ -16,8 +16,10 @@ import Wallet from "../public/assets/Wallet_Address (2).svg";
 import CenterSvg from "../utils/CenterSvg";
 import { motion } from "framer-motion";
 import MetaMaskButton from "../utils/MetaMaskButton";
+import { useWindowSize } from "../utils/hooks/useWindowResize";
 const Token = () => {
   const [hide, sethide] = useState(true);
+  const [height, width] = useWindowSize();
   const toggleItem = () => {
     hide ? sethide(false) : sethide(true);
   };
@@ -141,7 +143,7 @@ const Token = () => {
         <div
           className={
             hide
-              ? "lg:hidden md:hidden text-regal-blue space-y-8 flex flex-col justify-center items-center content-center"
+              ? "lg:hidden md:hidden text-regal-blue space-y-8 hidden flex-col justify-center items-center content-center"
               : "hidden"
           }
         >
@@ -189,81 +191,150 @@ const Token = () => {
         </div>
         {/* .......Bottom........... */}
 
-        <div
-          className={
-            hide
-              ? "flex  space-x-5 justify-center lg:mt-40 md:mt-40 mt-24 content-center"
-              : "hidden"
-          }
-        >
-          <div className="flex flex-col justify-center lg:scale-100 md:scale-100 scale-[1.2]  items-center">
-            <div className="relative lg:w-[40vh] md:w-[25vh] w-[12vh] ">
-              <Image src={cardBg} layout="responsive" />
-            </div>
-            <div className="lg:w-[8vw] md:w-[6vw] w-[6vw] customlg:w-[8vw] custommd:w-[6vw] absolute lg:mb-24 md:mb-10 ">
-              <Image src={BNB} />
-            </div>
-            <div className="w-[8vw] absolute space-x-2 lg:ml-0 -ml-3 md:-ml-10 mt-12 flex">
-              <p className="lg:text-3xl md:text-3xl text-lg">BNB </p>
-              <p className="lg:text-sm md:text-sm lg:flex md:flex hidden  text-xs mt-3 ml-2">
-                (GAS)
-              </p>
-            </div>
-            <div className="absolute lg:w-[14vw] md:w-[14vw] w-[18vw] mt-32 cursor-pointer flex justify-center">
-              <MetaMaskButton height={50} />
-              <div className="absolute">
-                <p className=" z-[10] text-white lg:text-2xl md:text-2xl text-sm lg:mt-2  mt-0">
-                  BUY
+        {width >= 786 && (
+          <div
+            className={
+              hide
+                ? "flex  space-x-5 justify-center lg:mt-40 md:mt-40 mt-24 content-center"
+                : "hidden"
+            }
+          >
+            <div className="flex flex-col justify-center lg:scale-100 md:scale-100 scale-[1.2]  items-center">
+              <div className="relative lg:w-[40vh] md:w-[25vh] w-[12vh] ">
+                <Image src={cardBg} layout="responsive" />
+              </div>
+              <div className="lg:w-[8vw] md:w-[6vw] w-[6vw] customlg:w-[8vw] custommd:w-[6vw] absolute lg:mb-24 md:mb-10 ">
+                <Image src={BNB} />
+              </div>
+              <div className="w-[8vw] absolute space-x-2 lg:ml-0 -ml-3 md:-ml-10 mt-12 flex">
+                <p className="lg:text-3xl md:text-3xl text-lg">BNB </p>
+                <p className="lg:text-sm md:text-sm lg:flex md:flex hidden  text-xs mt-3 ml-2">
+                  (GAS)
                 </p>
               </div>
+              <div className="absolute lg:w-[14vw] md:w-[14vw] w-[18vw] mt-32 cursor-pointer flex justify-center">
+                <MetaMaskButton height={50} />
+                <div className="absolute">
+                  <p className=" z-[10] text-white lg:text-2xl md:text-2xl text-sm lg:mt-2  mt-0">
+                    BUY
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
 
-          <div className="flex flex-col justify-center lg:scale-100 md:scale-100 scale-[1.2] items-center">
-            <div className="relative lg:w-[40vh] md:w-[25vh] w-[12vh] ">
-              <Image src={cardBg} layout="responsive" />
-            </div>
-            <div className="w-[8vw] customlg:w-[8vw] custommd:w-[6vw] absolute lg:mb-24 md:mb-10 mb-0">
-              <Image src={cryft2} />
-            </div>
-            <div className="w-[8vw] absolute lg:ml-0 md:-ml-10 -ml-7  lg:mt-10 md:mt-10 mt-10 flex">
-              <p className="lg:text-3xl md:text-2xl text-sm font-extrabold">
-                CRYFT
-              </p>
-            </div>
-            <div className="absolute lg:w-[14vw] md:w-[14vw] w-[18vw] mt-32 cursor-pointer flex justify-center">
-              <MetaMaskButton height={50} />
-              <div className="absolute">
-                <p className=" z-[10] text-white  lg:text-2xl md:text-2xl text-sm lg:mt-2  mt-0">
-                  BUY
+            <div className="flex flex-col justify-center lg:scale-100 md:scale-100 scale-[1.2] items-center">
+              <div className="relative lg:w-[40vh] md:w-[25vh] w-[12vh] ">
+                <Image src={cardBg} layout="responsive" />
+              </div>
+              <div className="w-[8vw] customlg:w-[8vw] custommd:w-[6vw] absolute lg:mb-24 md:mb-10 mb-0">
+                <Image src={cryft2} />
+              </div>
+              <div className="w-[8vw] absolute lg:ml-0 md:-ml-10 -ml-7  lg:mt-10 md:mt-10 mt-10 flex">
+                <p className="lg:text-3xl md:text-2xl text-sm font-extrabold">
+                  CRYFT
                 </p>
               </div>
+              <div className="absolute lg:w-[14vw] md:w-[14vw] w-[18vw] mt-32 cursor-pointer flex justify-center">
+                <MetaMaskButton height={50} />
+                <div className="absolute">
+                  <p className=" z-[10] text-white  lg:text-2xl md:text-2xl text-sm lg:mt-2  mt-0">
+                    BUY
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
 
-          <div className="flex flex-col justify-center lg:scale-100 md:scale-100 scale-[1.2] items-center">
-            <div className="relative lg:w-[40vh] md:w-[25vh] w-[12vh] ">
-              <Image src={cardBg} layout="responsive" />
-            </div>
-            <div className="w-[8vw] absolute justify-center items-center flex">
-              <p className="lg:text-9xl md:text-7xl text-3xl customlg:text-9xl custommd2:text-3xl text-regal-blue  lg:-mt-24 md:-mt-10 -mt-5 font-extrabold">
-                ?
-              </p>
-            </div>
-            <div className="absolute lg:w-[14vw] md:w-[14vw] w-[18vw] mt-32 cursor-pointer flex justify-center">
-              <MetaMaskButton height={50} />
-              <div className="absolute">
-                <p className=" z-[10] text-white lg:text-2xl md:text-2xl text-sm lg:mt-2  mt-0">
-                  SOON
+            <div className="flex flex-col justify-center lg:scale-100 md:scale-100 scale-[1.2] items-center">
+              <div className="relative lg:w-[40vh] md:w-[25vh] w-[12vh] ">
+                <Image src={cardBg} layout="responsive" />
+              </div>
+              <div className="w-[8vw] absolute justify-center items-center flex">
+                <p className="lg:text-9xl md:text-7xl text-3xl customlg:text-9xl custommd2:text-3xl text-regal-blue  lg:-mt-24 md:-mt-10 -mt-5 font-extrabold">
+                  ?
                 </p>
+              </div>
+              <div className="absolute lg:w-[14vw] md:w-[14vw] w-[18vw] mt-32 cursor-pointer flex justify-center">
+                <MetaMaskButton height={50} />
+                <div className="absolute">
+                  <p className=" z-[10] text-white lg:text-2xl md:text-2xl text-sm lg:mt-2  mt-0">
+                    SOON
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
+        {width < 786 && (
+          <div
+            className={
+              hide
+                ? "flex flex-col bg-[#0000008e] backdrop-blur-md rounded-xl py-12 w-[90%] m-auto  space-x-5 justify-center gap-16"
+                : "hidden"
+            }
+          >
+            <div
+              className="flex flex-col justify-center lg:scale-100 md:scale-100 scale-[1.2]  items-center gap-2 w-[50%] m-auto"
+              style={{ margin: "auto" }}
+            >
+              <div className="">
+                <Image width={64} height={64} src={BNB} />
+              </div>
+              <div className="  flex">
+                <p className="lg:text-3xl md:text-3xl text-lg">BNB </p>
+              </div>
+              <div className=" cursor-pointer flex justify-center">
+                <div className="">
+                  <button className="bg-regal-blue tracking-widest text-[14px] py-2 px-8 rounded-xl">
+                    BUY
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              className="flex flex-col justify-center lg:scale-100 md:scale-100 scale-[1.2] items-center gap-2 w-[50%] m-auto"
+              style={{ margin: "auto" }}
+            >
+              <div className="">
+                <Image width={64} height={64} src={cryft2} />
+              </div>
+              <div className=" flex">
+                <p className="lg:text-3xl md:text-2xl text-sm font-extrabold">
+                  CRYFT
+                </p>
+              </div>
+              <div className=" cursor-pointer flex justify-center">
+                <div className="">
+                  <button className="bg-regal-blue tracking-widest text-[14px] py-2 px-8 rounded-xl">
+                    BUY
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              className="flex flex-col justify-center lg:scale-100 md:scale-100 scale-[1.2] items-center gap-2 w-[50%] m-auto"
+              style={{ margin: "auto" }}
+            >
+              <div className=" justify-center items-center flex">
+                <p className="lg:text-9xl md:text-7xl text-3xl customlg:text-9xl custommd2:text-3xl text-regal-blue  font-extrabold">
+                  ?
+                </p>
+              </div>
+              <div className=" cursor-pointer flex justify-center">
+                <div className="">
+                  <button className="bg-black tracking-widest text-[14px] py-2 px-8 rounded-xl">
+                    SOON
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
       <div
         onClick={toggleItem}
-        className="absolute lg:bottom-8 md:bottom-8 bottom-1 z-[1000] lg:w-[18vh] md:w-[15vh] w-[10vh] cursor-pointer lg:right-5 md:right-5 right-1"
+        className=" absolute lg:bottom-8 md:bottom-8 bottom-1 z-[1000] lg:w-[18vh] md:w-[15vh] w-[10vh] cursor-pointer lg:right-5 md:right-5 right-1"
       >
         <Image
           className="image-logo"

@@ -298,7 +298,7 @@ const Swap = () => {
               style={{ boxShadow: "0 0 8px rgb(19 168 158)" }}
               className={
                 hide
-                  ? "text-white backdrop-blur-md gap-4 py-12 bg-[#0000008e] rounded-xl w-[90%] mx-auto my-[40%] justify-center items-center z-[2] flex flex-col font-Changeling text-sm "
+                  ? "text-white backdrop-blur-md gap-4 py-12 bg-[#0000008e] rounded-xl w-[90%] m-auto  justify-center items-center z-[2] flex flex-col font-Changeling text-sm "
                   : "hidden"
               }
             >

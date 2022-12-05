@@ -386,7 +386,7 @@ fill-opacity: 1;
     transition: opacity .1s ease;
   }
   header nav > .flex-sm {
-    padding: 100px 24px;
+    padding: 32px 24px;
     z-index: 9;
     position: absolute;
     height: 100%;
