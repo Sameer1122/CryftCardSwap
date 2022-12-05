@@ -1,10 +1,11 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import logo from "../public/assets/Cryft_Social_logo.png";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { useEffect } from "react";
 import "../styles/globals.css";
-import logo from "../public/assets/Cryft_Social_logo.png";
+
 import { useWindowSize } from "../utils/hooks/useWindowResize";
 import Image from "next/image";
 
