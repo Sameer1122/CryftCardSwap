@@ -1,6 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import logo from "../public/assets/Cryft_Social_logo.png";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -10,7 +9,6 @@ import { useWindowSize } from "../utils/hooks/useWindowResize";
 import Image from "next/image";
 
 function MyApp({ Component, pageProps }) {
-  const router = useRouter();
   const [height, width] = useWindowSize();
   const [hamB, sethamB] = useState(false);
   const route = useRouter();
@@ -100,14 +98,14 @@ function MyApp({ Component, pageProps }) {
                     </h1>
                   </div>
                   <div className="item flex flex-col gap-4">
-                    <div className="mb-12">
+                    {/* <div className="mb-12">
                       <Image
                         width={102}
                         height={102}
                         objectFit={"contain"}
                         src={logo}
                       />
-                    </div>
+                    </div> */}
                     <Link href={"/Redeem"}>
                       <p
                         className={`text-white text-2xl font-Changeling ${
