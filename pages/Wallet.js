@@ -171,26 +171,25 @@ const Wallet = () => {
               style={{ boxShadow: "0 0 6px rgb(19 168 158)" }}
               className={
                 hide
-                  ? "z-[1]  my-[40%] py-12 flex backdrop-blur-md w-[90%] mx-auto bg-[#0000008e] flex-col   items-center justify-center"
+                  ? "z-[1]  my-[40%] py-12 px-4 flex backdrop-blur-md w-[90%] mx-auto bg-[#0000008e] flex-col    items-center justify-center"
                   : "hidden"
               }
             >
-              <div className="flex flex-col gap-4 ">
+              <div className="flex flex-col gap-8 ">
                 <div className="text-xl flex justify-center">
                   <p> TOKEN WALLET</p>
                 </div>
                 <div className=" flex flex-col justify-center items-start">
                   <div className="flex justify-between w-full">
-                    <div className=" flex flex-col justify-center items-center">
-                      <div className=" lg:text-sm md:text-sm sm:text-sm text-xs tracking-wider">
-                        .1111 BNB EACH
-                      </div>
-
+                    <div className=" flex flex-col justify-center items-center gap-2">
                       <Link href={"/WalletBuyCode"}>
-                        <button className="bg-regal-blue w-full tracking-widest text-[12px] py-2 px-4 rounded-2xl">
+                        <button className="bg-regal-blue w-full tracking-widest text-[12px] w- py-2 px-4 rounded-2xl">
                           BUY CODE
                         </button>
                       </Link>
+                      <div className=" lg:text-sm md:text-sm sm:text-sm text-[10px] tracking-wider">
+                        .1111 BNB EACH
+                      </div>
                     </div>
                     <div className="text-xs flex flex-col justify-center items-center tracking-widest">
                       <p>
@@ -200,36 +199,37 @@ const Wallet = () => {
                   </div>
                 </div>
                 <div className=" flex flex-col   justify-center items-start">
-                  <div className=" flex justify-between gap-8 w-full ">
-                    <div className=" flex  flex-col w-full ">
+                  <div className=" flex justify-between  w-full gap-14 ">
+                    <div className=" flex  flex-col w-[50%] ">
                       <Link href={"/WalletSend"}>
-                        <button className="bg-regal-blue tracking-widest text-[12px]   py-2 px-4 rounded-2xl">
+                        <button className="bg-regal-blue tracking-widest text-[12px] w-[100%]   py-2 px-4 rounded-2xl">
                           SEND
                         </button>
                       </Link>
                     </div>
-                    <div className=" flex flex-col w-full  justify-center items-center">
+                    <div className=" flex flex-col  w-[50%]  justify-center items-center">
                       <Link href={"/WalletReceive"}>
-                        <button className="bg-regal-blue tracking-widest text-[12px] py-2 px-4 rounded-2xl">
+                        <button className="bg-regal-blue tracking-widest text-[12px] w-full  py-2 px-4 rounded-2xl">
                           RECEIVE
                         </button>
                       </Link>
                     </div>
                   </div>
                 </div>
-                <div className=" flex flex-col justify-center items-start ">
-                  <div className="flex justify-between w-full">
-                    <div className="relative flex flex-col lg:w-52 md:w-52 sm:w-44 w-28 justify-center items-center">
+                <div className=" flex flex-col w-full justify-center items-start ">
+                  <div className="flex justify-between  w-full">
+                    <div className="w-[60%]">
                       <Link href={"/WalletBalance"}>
-                        <button className="bg-regal-blue tracking-widest text-[12px] py-2 px-4 rounded-2xl">
+                        <button className="bg-regal-blue w-[66%] tracking-widest text-[12px] py-2 px-4 rounded-2xl">
                           BALANCE
                         </button>
                       </Link>
                     </div>
-                    <div className="l text-xs  tracking-widest flex flex-col justify-center items-center">
-                      <p>VIEW YOUR</p>
-                      <p>TOKEN</p>
-                      <p>BALANCES</p>
+                    <div className="text-xs w-[40%] flex flex-col justify-startitems-start tracking-widest">
+                      <p>
+                        VIEW YOUR TOKEN <br />
+                        BALANCE
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -242,10 +242,8 @@ const Wallet = () => {
                         </button>
                       </Link>
                     </div>
-                    <div className="text-xs tracking-widest flex flex-col justify-center items-center">
-                      <p>VIEW YOUR</p>
-                      <p>NFT</p>
-                      <p>BALANCES</p>
+                    <div className="text-xs tracking-widest w-[40%] flex flex-col justify-center items-center">
+                      <p>VIEW YOUR NFT BALANCES</p>
                     </div>
                   </div>
                 </div>
@@ -256,9 +254,9 @@ const Wallet = () => {
                         BUY GAS
                       </button>
                     </div>
-                    <div className="text-xs justify-center items-center  tracking-widest flex flex-col ">
-                      <p className="text-center">
-                        YOU NEED BNB GAS <br /> TO BUY CODE,
+                    <div className="text-xs justify-center items-center w-[40%]  tracking-widest flex flex-col ">
+                      <p className="">
+                        YOU NEED BNB GAS TO BUY CODE,
                         <br />
                         SWAP & SEND
                       </p>

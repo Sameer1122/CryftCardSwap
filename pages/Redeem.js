@@ -371,7 +371,7 @@ const Redeem = () => {
               style={{ boxShadow: "0 0 6px rgb(19 168 158)" }}
               className={
                 hide
-                  ? "text-white bg-[#000000bd] justify-center py-10 gap-16 w-[90%] mx-auto backdrop-blur-sm  items-center my-[40%] rounded-xl   z-[2] flex flex-col font-Changeling text-sm "
+                  ? "text-white bg-[#000000bd] justify-center py-10 gap-16 w-[90%] m-auto backdrop-blur-sm  items-center  rounded-xl   z-[2] flex flex-col font-Changeling text-sm "
                   : "hidden"
               }
             >

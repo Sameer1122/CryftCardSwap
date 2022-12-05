@@ -12,9 +12,11 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import WalletHeader from "./WalletHeader";
 import MainWalletBox from "../utils/MainWalletBox";
+import { useWindowSize } from "../utils/hooks/useWindowResize";
 // import BgVideo from "../public/assets/animation_re_render_ (1).mp4";
 const WalletBuyCode = () => {
   const [hide, sethide] = useState(true);
+  const [height, width] = useWindowSize();
   const toggleItem = () => {
     hide ? sethide(false) : sethide(true);
   };
@@ -57,87 +59,168 @@ const WalletBuyCode = () => {
         }
       >
         {" "}
-        <WalletHeader hide={hide} />
+        {width > 786 && <WalletHeader hide={hide} />}
         {/* ............Bottom................ */}
-        <div
-          className={
-            hide
-              ? "relative z-[1]  lg:scale-y-100 md:scale-y-100 scale-y-[1.2]  lg:h-10 md:h-10 h-24 mb-2 customlg:h-7 custommd:h-0 lg:top-96 md:top-96 top-52 flex justify-center items-center"
-              : "hidden"
-          }
-        >
-          <MainWalletBox />
-        </div>
-        <div
-          className={
-            hide
-              ? "text-white lg:mt-24 md:mt-24  mt-4 justify-center items-center z-[2] flex flex-col gap-4 font-Changeling text-sm "
-              : "hidden"
-          }
-        >
-          <div className="text-white justify-center items-center flex z-[2] font-Changeling text-3xl">
-            <p className="lg:ml-44 md:ml-44 ml-40 lg:text-2xl md:text-2xl text-sm customlg:mt-5 custommd:mt-8 lg:mt-4 md:mt-3 -mt-8">
-              CRYFT CODE
-            </p>
-          </div>
-          <Link href="/Wallet">
-            <div className="flex flex-col cursor-pointer justify-center items-center  lg:mr-72 md:mr-72 mr-44 w-[15vh] mt-2 text-sm z-[100]">
-              <Image layout="intrinsic" objectFit="contain" src={img7} />
-              <div className="absolute">GO BACK</div>
+        {width >= 786 ? (
+          <>
+            <div
+              className={
+                hide
+                  ? "relative z-[1]  lg:scale-y-100 md:scale-y-100 scale-y-[1.2]  lg:h-10 md:h-10 h-24 mb-2 customlg:h-7 custommd:h-0 lg:top-96 md:top-96 top-52 flex justify-center items-center"
+                  : "hidden"
+              }
+            >
+              <MainWalletBox />
             </div>
-          </Link>
-          <div className="flex flex-col justify-center items-center mt-2 lg:text-sm md:text-sm text-xs  z-[100]">
-            <div className="absolute">.1111 BNB EACH</div>
-          </div>
-          <div className="flex flex-col cursor-pointer justify-center items-center lg:w-[30vh] md:w-[30vh] w-[25vh] mt-2 lg:text-2xl md:text-2xl text-lg z-[100]">
-            <Image layout="intrinsic" objectFit="contain" src={img7} />
-            <div className="absolute">BUY CODE</div>
-          </div>
-
-          <div className="flex flex-col justify-center items-center mt-4 lg:text-sm md:text-sm text-xs z-[100]">
-            <div className="absolute mt-4 flex flex-col items-center">
-              <p>CRYFT CODES RESULT IN CRYFT TOKEN</p>
-              <p>AT TIME OF REDEMPTION</p>
-            </div>
-          </div>
-
-          <div className="flex flex-col justify-center tracking-wider items-center lg:mt-14 md:mt-14 mt-10 lg:text-3xl md:text-2xl text-xl  z-[100]">
-            <div className="absolute">CODES PURCHASED</div>
-          </div>
-          <div className="flex flex-col justify-center items-center mt-5 lg:text-sm md:text-sm text-xs z-[100]">
-            <div className="absolute">STORE CODE IN SAFE PLACE</div>
-          </div>
-
-          <div className="flex flex-col lg:mt-4 md:mt-4 mt-0  items-center">
-            <div className="flex space-x-5">
-              <p className="mt-3 lg:text-xl md:text-xl text-sm">
-                1234567891234
-              </p>
-              <div className="flex cursor-pointer flex-col justify-center items-center lg:w-[15vh] md:w-[15vh] w-[13vh] mt-2 lg:text-sm md:text-sm text-xs z-[100]">
+            <div
+              className={
+                hide
+                  ? "text-white lg:mt-24 md:mt-24  mt-4 justify-center items-center z-[2] flex flex-col gap-4 font-Changeling text-sm "
+                  : "hidden"
+              }
+            >
+              <div className="text-white justify-center items-center flex z-[2] font-Changeling text-3xl">
+                <p className="lg:ml-44 md:ml-44 ml-40 lg:text-2xl md:text-2xl text-sm customlg:mt-5 custommd:mt-8 lg:mt-4 md:mt-3 -mt-8">
+                  CRYFT CODE
+                </p>
+              </div>
+              <Link href="/Wallet">
+                <div className="flex flex-col cursor-pointer justify-center items-center  lg:mr-72 md:mr-72 mr-44 w-[15vh] mt-2 text-sm z-[100]">
+                  <Image layout="intrinsic" objectFit="contain" src={img7} />
+                  <div className="absolute">GO BACK</div>
+                </div>
+              </Link>
+              <div className="flex flex-col justify-center items-center mt-2 lg:text-sm md:text-sm text-xs  z-[100]">
+                <div className="absolute">.1111 BNB EACH</div>
+              </div>
+              <div className="flex flex-col cursor-pointer justify-center items-center lg:w-[30vh] md:w-[30vh] w-[25vh] mt-2 lg:text-2xl md:text-2xl text-lg z-[100]">
                 <Image layout="intrinsic" objectFit="contain" src={img7} />
-                <div className="absolute">REMOVE</div>
+                <div className="absolute">BUY CODE</div>
+              </div>
+
+              <div className="flex flex-col justify-center items-center mt-4 lg:text-sm md:text-sm text-xs z-[100]">
+                <div className="absolute mt-4 flex flex-col items-center">
+                  <p>CRYFT CODES RESULT IN CRYFT TOKEN</p>
+                  <p>AT TIME OF REDEMPTION</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col justify-center tracking-wider items-center lg:mt-14 md:mt-14 mt-10 lg:text-3xl md:text-2xl text-xl  z-[100]">
+                <div className="absolute">CODES PURCHASED</div>
+              </div>
+              <div className="flex flex-col justify-center items-center mt-5 lg:text-sm md:text-sm text-xs z-[100]">
+                <div className="absolute">STORE CODE IN SAFE PLACE</div>
+              </div>
+
+              <div className="flex flex-col lg:mt-4 md:mt-4 mt-0  items-center">
+                <div className="flex space-x-5">
+                  <p className="mt-3 lg:text-xl md:text-xl text-sm">
+                    1234567891234
+                  </p>
+                  <div className="flex cursor-pointer flex-col justify-center items-center lg:w-[15vh] md:w-[15vh] w-[13vh] mt-2 lg:text-sm md:text-sm text-xs z-[100]">
+                    <Image layout="intrinsic" objectFit="contain" src={img7} />
+                    <div className="absolute">REMOVE</div>
+                  </div>
+                </div>
+                <div className="flex space-x-5">
+                  <p className="mt-3 lg:text-xl md:text-xl text-sm">
+                    1234567891234
+                  </p>
+                  <div className="flex flex-col cursor-pointer justify-center items-center lg:w-[15vh] md:w-[15vh] w-[13vh] mt-2 lg:text-sm md:text-sm text-xs z-[100]">
+                    <Image layout="intrinsic" objectFit="contain" src={img7} />
+                    <div className="absolute">REMOVE</div>
+                  </div>
+                </div>
+                <div className="flex space-x-5">
+                  <p className="mt-3 lg:text-xl md:text-xl text-sm">
+                    1234567891234
+                  </p>
+                  <div className="flex flex-col cursor-pointer  justify-center items-center lg:w-[15vh] md:w-[15vh] w-[13vh] mt-2 lg:text-sm md:text-sm text-xs z-[100]">
+                    <Image layout="intrinsic" objectFit="contain" src={img7} />
+                    <div className="absolute">REMOVE</div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="flex space-x-5">
-              <p className="mt-3 lg:text-xl md:text-xl text-sm">
-                1234567891234
-              </p>
-              <div className="flex flex-col cursor-pointer justify-center items-center lg:w-[15vh] md:w-[15vh] w-[13vh] mt-2 lg:text-sm md:text-sm text-xs z-[100]">
-                <Image layout="intrinsic" objectFit="contain" src={img7} />
-                <div className="absolute">REMOVE</div>
+          </>
+        ) : (
+          <>
+            <div
+              style={{ boxShadow: "0 0 6px rgb(19 168 158)" }}
+              className={
+                hide
+                  ? "text-white bg-[#0000008e] rounded-xl backdrop-blur-md py-12 w-[90%] m-auto   justify-center items-center z-[2] flex flex-col gap-4 font-Changeling text-sm "
+                  : "hidden"
+              }
+            >
+              <div className="text-white justify-center items-center flex z-[2] font-Changeling text-3xl">
+                <p className="text-2xl">CRYFT CODE</p>
+              </div>
+              <Link href="/Wallet">
+                <div className="flex flex-col cursor-pointer justify-center items-center  lg:mr-72 md:mr-72 mr-44  mt-2 text-sm z-[100]">
+                  <button className="bg-regal-blue tracking-widest text-[10px] py-2 px-4 rounded-2xl">
+                    GO BACK
+                  </button>
+                </div>
+              </Link>
+              <div className="flex flex-col justify-center items-center mt-2 lg:text-sm md:text-sm text-xs  z-[100]">
+                <div className="absolute">.1111 BNB EACH</div>
+              </div>
+              <div className="flex flex-col cursor-pointer justify-center items-center lg:w-[30vh] md:w-[30vh] w-[25vh] mt-2 lg:text-2xl md:text-2xl text-lg z-[100]">
+                <button className="bg-regal-blue tracking-widest text-[14px] py-2 px-4 rounded-2xl">
+                  BUY CODE
+                </button>
+              </div>
+
+              <div className="flex flex-col justify-center items-center mt-4 lg:text-sm md:text-sm text-xs z-[100]">
+                <div className="absolute mt-4 flex flex-col items-center">
+                  <p>CRYFT CODES RESULT IN CRYFT TOKEN</p>
+                  <p>AT TIME OF REDEMPTION</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col justify-center tracking-wider items-center lg:mt-14 md:mt-14 mt-10 lg:text-3xl md:text-2xl text-xl  z-[100]">
+                <div className="absolute">CODES PURCHASED</div>
+              </div>
+              <div className="flex flex-col justify-center items-center mt-5 lg:text-sm md:text-sm text-xs z-[100]">
+                <div className="absolute">STORE CODE IN SAFE PLACE</div>
+              </div>
+
+              <div className="flex flex-col lg:mt-4 md:mt-4 mt-0 gap-2  items-center">
+                <div className="flex space-x-5">
+                  <p className="mt-3 lg:text-xl md:text-xl text-sm">
+                    1234567891234
+                  </p>
+                  <div className="flex cursor-pointer flex-col justify-center items-center lg:w-[15vh] md:w-[15vh] w-[13vh] mt-2 lg:text-sm md:text-sm text-xs z-[100]">
+                    <button className="bg-regal-blue tracking-widest text-[11px] py-2 px-4 rounded-2xl">
+                      REMOVE
+                    </button>
+                  </div>
+                </div>
+                <div className="flex space-x-5">
+                  <p className="mt-3 lg:text-xl md:text-xl text-sm">
+                    1234567891234
+                  </p>
+                  <div className="flex flex-col cursor-pointer justify-center items-center lg:w-[15vh] md:w-[15vh] w-[13vh] mt-2 lg:text-sm md:text-sm text-xs z-[100]">
+                    <button className="bg-regal-blue tracking-widest text-[11px] py-2 px-4 rounded-2xl">
+                      REMOVE
+                    </button>
+                  </div>
+                </div>
+                <div className="flex space-x-5">
+                  <p className="mt-3 lg:text-xl md:text-xl text-sm">
+                    1234567891234
+                  </p>
+                  <div className="flex flex-col cursor-pointer  justify-center items-center lg:w-[15vh] md:w-[15vh] w-[13vh] mt-2 lg:text-sm md:text-sm text-xs z-[100]">
+                    <button className="bg-regal-blue tracking-widest text-[11px] py-2 px-4 rounded-2xl">
+                      REMOVE
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="flex space-x-5">
-              <p className="mt-3 lg:text-xl md:text-xl text-sm">
-                1234567891234
-              </p>
-              <div className="flex flex-col cursor-pointer  justify-center items-center lg:w-[15vh] md:w-[15vh] w-[13vh] mt-2 lg:text-sm md:text-sm text-xs z-[100]">
-                <Image layout="intrinsic" objectFit="contain" src={img7} />
-                <div className="absolute">REMOVE</div>
-              </div>
-            </div>
-          </div>
-        </div>
+          </>
+        )}
       </div>
       <div
         onClick={toggleItem}
