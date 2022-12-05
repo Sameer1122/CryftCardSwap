@@ -274,83 +274,144 @@ const Redeem = () => {
             </div>
           </div>
           {/* ..........Bottom............... */}
-          <motion.div
-            initial={{
-              opacity: 0,
-            }}
-            transition={{
-              duration: 0.5,
-              delay: 2,
-            }}
-            animate={{
-              opacity: 1,
-            }}
-            className={
-              "relative z-[1]  lg:h-10 md:h-10 h-24 mb-2 customlg:h-7 custommd:h-0 lg:top-[26rem] md:top-[26rem] top-[42%] flex justify-center items-center"
-            }
-          >
-            {width > 768 ? <RedeemSvg /> : <MainMobileWallet />}
-          </motion.div>
-          <motion.div
-            initial={{
-              scale: 0.5,
-              opacity: 0,
-            }}
-            transition={{
-              duration: 0.5,
-              delay: 2.7,
-            }}
-            animate={{
-              scale: 1,
-              opacity: 1,
-            }}
-            className={
-              hide
-                ? "text-white lg:mt-[11rem] md:mt-36 mt-4 justify-center md:static  absolute top-[29%] items-center z-[2] flex flex-col font-Changeling text-sm "
-                : "hidden"
-            }
-          >
-            <div className="text-white mt-12 tracking-wider justify-center items-center flex z-[2] font-Changeling text-2xl">
-              <p className="lg:ml-36 md:ml-36 ml-16 lg:text-3xl md:text-3xl text-sm customlg:mt-5 custommd:mt-8 mt-0">
-                {" "}
-                REDEEM CRYFT CARD{" "}
-              </p>
-            </div>
-            <p className="mt-8"> 13 DIGIT CARD FOR CRYFT CARD </p>
-            <div className="flex justify-center content-center text-white">
-              <input
-                className="lg:text-3xl md:text-3xl placeholder:text-gray-300  placeholder:text-center active:outline-none  text-lg mt-5 z-10 bg-[#ffffff17] w-[500px] mb-4 m-auto content-center"
-                placeholder="ENTER CODE"
-              />
-            </div>
-            {/* <div className="relative lg:-mt-9 md:-mt-9 -mt-6 h-10 lg:w-fit md:w-fit w-[70%]">
+          {width > 786 ? (
+            <>
+              <motion.div
+                initial={{
+                  opacity: 0,
+                }}
+                transition={{
+                  duration: 0.5,
+                  delay: 2,
+                }}
+                animate={{
+                  opacity: 1,
+                }}
+                className={
+                  "relative z-[1]  lg:h-10 md:h-10 h-24 mb-2 customlg:h-7 custommd:h-0 lg:top-[26rem] md:top-[26rem] top-[42%] flex justify-center items-center"
+                }
+              >
+                <RedeemSvg />
+              </motion.div>
+              <motion.div
+                initial={{
+                  scale: 0.5,
+                  opacity: 0,
+                }}
+                transition={{
+                  duration: 0.5,
+                  delay: 2.7,
+                }}
+                animate={{
+                  scale: 1,
+                  opacity: 1,
+                }}
+                className={
+                  hide
+                    ? "text-white lg:mt-[11rem] md:mt-36 mt-4 justify-center md:static  absolute top-[29%] items-center z-[2] flex flex-col font-Changeling text-sm "
+                    : "hidden"
+                }
+              >
+                <div className="text-white mt-12 tracking-wider justify-center items-center flex z-[2] font-Changeling text-2xl">
+                  <p className="lg:ml-36 md:ml-36 ml-16 lg:text-3xl md:text-3xl text-sm customlg:mt-5 custommd:mt-8 mt-0">
+                    {" "}
+                    REDEEM CRYFT CARD{" "}
+                  </p>
+                </div>
+                <p className="mt-8"> 13 DIGIT CARD FOR CRYFT CARD </p>
+                <div className="flex justify-center content-center text-white">
+                  <input
+                    className="lg:text-3xl md:text-3xl placeholder:text-gray-300  placeholder:text-center active:outline-none  text-lg mt-5 z-10 bg-[#ffffff17] w-[500px] mb-4 m-auto content-center"
+                    placeholder="ENTER CODE"
+                  />
+                </div>
+                {/* <div className="relative lg:-mt-9 md:-mt-9 -mt-6 h-10 lg:w-fit md:w-fit w-[70%]">
               <Image layout="" src={img6} />
             </div> */}
-            <div className="relative lg:w-fit md:w-fit w-[40%] flex cursor-pointer lg:mt-3 md:mt-3 mt-0">
-              {/* <Image layout="" src={img7} /> */}
-              <MetaMaskButton height={width > 768 ? 48 : 32} />
-            </div>
-            <div className="relative flex cursor-pointer lg:text-3xl md:text-3xl text-xl lg:-mt-11 md:-mt-11 -mt-8">
-              <p className="cursor-pointer">SUBMIT</p>
-            </div>
-            <div className="relative lg:flex md:flex hidden cursor-pointer text-sm -mt-11">
-              <p className="ml-[26rem]">
-                *COST ZERO GAS <br /> TO REDEEM
-              </p>
-            </div>
+                <div className="relative lg:w-fit md:w-fit w-[40%] flex cursor-pointer lg:mt-3 md:mt-3 mt-0">
+                  {/* <Image layout="" src={img7} /> */}
+                  <MetaMaskButton height={width > 768 ? 48 : 32} />
+                </div>
+                <div className="relative flex cursor-pointer lg:text-3xl md:text-3xl text-xl lg:-mt-11 md:-mt-11 -mt-8">
+                  <p className="cursor-pointer">SUBMIT</p>
+                </div>
+                <div className="relative lg:flex md:flex hidden cursor-pointer text-sm -mt-11">
+                  <p className="ml-[26rem]">
+                    *COST ZERO GAS <br /> TO REDEEM
+                  </p>
+                </div>
 
-            <div className="relative lg:flex md:flex hidden text-2xl mt-8 text-white font-Changeling">
-              <p>CARDS REDEEMED</p>
-            </div>
-            <div className="relative lg:flex md:flex hidden lg:space-x-10 md:space-x-10 space-x-2 font-Changeling text-white md:text-xl text-sm lg:text-xl tracking-wide mt-4">
-              <p>1234567891234</p>
-              <p>1234567891234</p>
-            </div>
-            <div className="relative lg:flex md:flex hidden lg:space-x-10 md:space-x-10 space-x-2  font-Changeling font-light text-white md:text-xl text-sm lg:text-xl tracking-wide">
-              <p>1234567891234</p>
-              <p>1234567891234</p>
-            </div>
-          </motion.div>
+                <div className="relative lg:flex md:flex hidden text-2xl mt-8 text-white font-Changeling">
+                  <p>CARDS REDEEMED</p>
+                </div>
+                <div className="relative lg:flex md:flex hidden lg:space-x-10 md:space-x-10 space-x-2 font-Changeling text-white md:text-xl text-sm lg:text-xl tracking-wide mt-4">
+                  <p>1234567891234</p>
+                  <p>1234567891234</p>
+                </div>
+                <div className="relative lg:flex md:flex hidden lg:space-x-10 md:space-x-10 space-x-2  font-Changeling font-light text-white md:text-xl text-sm lg:text-xl tracking-wide">
+                  <p>1234567891234</p>
+                  <p>1234567891234</p>
+                </div>
+              </motion.div>
+            </>
+          ) : (
+            <motion.div
+              initial={{
+                scale: 0.5,
+                opacity: 0,
+              }}
+              transition={{
+                duration: 0.5,
+                delay: 0.5,
+              }}
+              animate={{
+                scale: 1,
+                opacity: 1,
+              }}
+              style={{ boxShadow: "0 0 6px rgb(19 168 158)" }}
+              className={
+                hide
+                  ? "text-white bg-[#000000bd] justify-center py-10 gap-16 w-[90%] mx-auto backdrop-blur-sm  items-center my-[40%] rounded-xl   z-[2] flex flex-col font-Changeling text-sm "
+                  : "hidden"
+              }
+            >
+              <div className="text-white justify-center items-center gap-2  flex-col tracking-wider flex z-[2] font-Changeling ">
+                <p className=" l text-xl"> REDEEM CRYFT CARD </p>
+                <p className="text-xs"> 13 DIGIT CARD FOR CRYFT CARD </p>
+              </div>
+
+              <div className="flex justify-center  text-white">
+                <input
+                  className="placeholder:text-gray-300 py-2 px-4  placeholder:text-center active:outline-none  text-lg z-10 bg-[#ffffff17] w-[100%] m-auto"
+                  placeholder="ENTER CODE"
+                />
+              </div>
+
+              <div className=" flex cursor-pointer lg:text-3xl md:text-3xl text-xl">
+                <button className="bg-regal-blue tracking-widest text-[14px] py-2 px-8 rounded-2xl">
+                  SUBMIT
+                </button>
+              </div>
+
+              <div className=" lg:flex md:flex hidden cursor-pointer text-sm -mt-11">
+                <p className="ml-[26rem]">
+                  *COST ZERO GAS <br /> TO REDEEM
+                </p>
+              </div>
+
+              <div className=" lg:flex md:flex hidden text-2xl mt-8 text-white font-Changeling">
+                <p>CARDS REDEEMED</p>
+              </div>
+              <div className=" lg:flex md:flex hidden lg:space-x-10 md:space-x-10 space-x-2 font-Changeling text-white md:text-xl text-sm lg:text-xl tracking-wide mt-4">
+                <p>1234567891234</p>
+                <p>1234567891234</p>
+              </div>
+              <div className="relative lg:flex md:flex hidden lg:space-x-10 md:space-x-10 space-x-2  font-Changeling font-light text-white md:text-xl text-sm lg:text-xl tracking-wide">
+                <p>1234567891234</p>
+                <p>1234567891234</p>
+              </div>
+            </motion.div>
+          )}
         </motion.div>
       )}
       <div

@@ -16,9 +16,11 @@ import Header from "./WalletHeader";
 import SwapSvg from "../utils/SwapSvg";
 import MetaMaskButton from "../utils/MetaMaskButton";
 import CenterSvg from "../utils/CenterSvg";
+import { useWindowSize } from "../utils/hooks/useWindowResize";
 // import BgVideo from "../public/assets/animation_re_render_ (1).mp4";
 const Swap = () => {
   const [hide, sethide] = useState(true);
+  const [height, width] = useWindowSize();
   const toggleItem = () => {
     hide ? sethide(false) : sethide(true);
   };
@@ -150,7 +152,7 @@ const Swap = () => {
           <div
             className={
               hide
-                ? "lg:hidden md:hidden text-regal-blue space-y-8 flex flex-col justify-center items-center content-center"
+                ? "lg:hidden md:hidden text-regal-blue space-y-8 hidden flex-col justify-center items-center content-center"
                 : "hidden"
             }
           >
@@ -194,101 +196,181 @@ const Swap = () => {
             </div>
           </div>
           {/* .......Bottom........... */}
-
-          <div
-            className={
-              hide
-                ? "relative z-[1]  lg:h-10 md:h-10 h-24 mb-2 customlg:h-7 custommd:h-0 lg:top-[26rem] md:top-96 top-40 flex justify-center items-center"
-                : "hidden"
-            }
-          >
-            {/* <Image
+          {width >= 786 ? (
+            <>
+              <div
+                className={
+                  hide
+                    ? "relative z-[1]  lg:h-10 md:h-10 h-24 mb-2 customlg:h-7 custommd:h-0 lg:top-[26rem] md:top-96 top-40 flex justify-center items-center"
+                    : "hidden"
+                }
+              >
+                {/* <Image
               // height="600"
               // width="1000"
               layout="fixed"
               src={img5}
             /> */}
-            <SwapSvg />
-          </div>
-          <div
-            className={
-              hide
-                ? "text-white lg:mt-40 md:mt-40 mt-0 justify-center items-center z-[2] flex flex-col font-Changeling text-sm "
-                : "hidden"
-            }
-          >
-            <motion.div
-              key={"tokenswap"}
-              transition={{
-                duration: 0.5,
-                delay: 1,
-              }}
-              initial={{
-                opacity: 0,
-                y: -20,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              exit={{
-                opacity: 0,
-                y: -20,
-              }}
-              className="text-white justify-center items-center flex z-[2] font-Changeling text-3xl"
-            >
-              <p className="lg:ml-52 md:ml-52 ml-32 lg:text-2xl md:text-2xl text-sm customlg:mt-5 custommd:mt-8 mt-0">
-                {" "}
-                TOKEN SWAP{" "}
-              </p>
-            </motion.div>
-            {/* <p className="mt-12"> 13 DIGIT CARD FOR CRYFT CARD </p> */}
-            <div className="flex justify-center content-center text-white w-[90%]">
-              <input
-                className="lg:text-xl md:text-xl p-[1rem] bg-[#ffffff17] placeholder:text-gray-300  placeholder:text-center active:outline-none  text-sm mt-8 z-10  content-center"
-                placeholder="10234.304267 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CRYFT"
-              />
-            </div>
-            {/* <div className="relative lg:-mt-9 md:-mt-9 -mt-6 h-10 lg:w-fit md:w-fit w-[70%]">
+                <SwapSvg />
+              </div>
+              <div
+                className={
+                  hide
+                    ? "text-white lg:mt-40 md:mt-40 mt-0 justify-center items-center z-[2] flex flex-col font-Changeling text-sm "
+                    : "hidden"
+                }
+              >
+                <motion.div
+                  key={"tokenswap"}
+                  transition={{
+                    duration: 0.5,
+                    delay: 1,
+                  }}
+                  initial={{
+                    opacity: 0,
+                    y: -20,
+                  }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  exit={{
+                    opacity: 0,
+                    y: -20,
+                  }}
+                  className="text-white justify-center items-center flex z-[2] font-Changeling text-3xl"
+                >
+                  <p className="lg:ml-52 md:ml-52 ml-32 lg:text-2xl md:text-2xl text-sm customlg:mt-5 custommd:mt-8 mt-0">
+                    {" "}
+                    TOKEN SWAP{" "}
+                  </p>
+                </motion.div>
+                {/* <p className="mt-12"> 13 DIGIT CARD FOR CRYFT CARD </p> */}
+                <div className="flex justify-center content-center text-white w-[90%]">
+                  <input
+                    className="lg:text-xl md:text-xl p-[1rem] bg-[#ffffff17] placeholder:text-gray-300  placeholder:text-center active:outline-none  text-sm mt-8 z-10  content-center"
+                    placeholder="10234.304267 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CRYFT"
+                  />
+                </div>
+                {/* <div className="relative lg:-mt-9 md:-mt-9 -mt-6 h-10 lg:w-fit md:w-fit w-[70%]">
               <Image layout="" src={img6} />
             </div> */}
-            {/* <div className="relative lg:flex md:flex hidden cursor-pointer text-sm -mt-11">
+                {/* <div className="relative lg:flex md:flex hidden cursor-pointer text-sm -mt-11">
             <p className="ml-96">
               *COST ZERO GAS <br /> TO REDEEM
             </p>
-          </div> */}
+            </div> */}
 
-            <div className="relative lg:flex md:flex hidden text-3xl z-[1] mt-5 text-regal-blue font-Changeling">
-              <p className="text-white">FOR</p>
-            </div>
-            <div className="flex justify-center content-center text-white w-[90%]">
-              <input
-                className="lg:text-xl md:text-xl bg-[#ffffff17] p-[1rem] placeholder:text-gray-300  placeholder:text-center active:outline-none  text-sm mt-8 z-10  content-center"
-                placeholder="10234.304267 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BNB"
-              />
-            </div>
-            {/* <div className="relative lg:-mt-9 md:-mt-9 -mt-6 h-10 lg:w-fit md:w-fit w-[70%]">
+                <div className="relative lg:flex md:flex hidden text-3xl z-[1] mt-5 text-regal-blue font-Changeling">
+                  <p className="text-white">FOR</p>
+                </div>
+                <div className="flex justify-center content-center text-white w-[90%]">
+                  <input
+                    className="lg:text-xl md:text-xl bg-[#ffffff17] p-[1rem] placeholder:text-gray-300  placeholder:text-center active:outline-none  text-sm mt-8 z-10  content-center"
+                    placeholder="10234.304267 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BNB"
+                  />
+                </div>
+                {/* <div className="relative lg:-mt-9 md:-mt-9 -mt-6 h-10 lg:w-fit md:w-fit w-[70%]">
               <Image layout="" src={img6} />
             </div> */}
-            <div className="lg:mr-72 md:mr-72 mr-28 lg:mb-0 md:mb-0 mb-3 lg:text-lg md:text-lg text-xs">
-              EST.BEFORE FEES
+                <div className="lg:mr-72 md:mr-72 mr-28 lg:mb-0 md:mb-0 mb-3 lg:text-lg md:text-lg text-xs">
+                  EST.BEFORE FEES
+                </div>
+                <div className="relative lg:w-fit md:w-fit w-[40%] flex cursor-pointer lg:mt-3 md:mt-3 mt-0">
+                  {/* <Image layout="" src={img7} /> */}
+                  <MetaMaskButton height={48} />
+                </div>
+                <div className="relative flex cursor-pointer lg:text-3xl md:text-3xl text-xl lg:-mt-11 md:-mt-11 -mt-8">
+                  <p className="cursor-pointer">SWAP</p>
+                </div>
+                {/* <div className="relative lg:flex md:flex hidden lg:space-x-10 md:space-x-10 space-x-2 font-Changeling text-white md:text-2xl text-sm lg:text-2xl tracking-wide mt-4">
+            <p>1234567891234</p>
+            <p>1234567891234</p>
             </div>
-            <div className="relative lg:w-fit md:w-fit w-[40%] flex cursor-pointer lg:mt-3 md:mt-3 mt-0">
-              {/* <Image layout="" src={img7} /> */}
-              <MetaMaskButton height={48} />
+            <div className="relative lg:flex md:flex hidden lg:space-x-10 md:space-x-10 space-x-2  font-Changeling font-light text-white md:text-2xl text-sm lg:text-2xl tracking-wide">
+            <p>1234567891234</p>
+            <p>1234567891234</p>
+            </div> */}
+              </div>
+            </>
+          ) : (
+            <div
+              style={{ boxShadow: "0 0 8px rgb(19 168 158)" }}
+              className={
+                hide
+                  ? "text-white backdrop-blur-md gap-4 py-12 bg-[#0000008e] rounded-xl w-[90%] mx-auto my-[40%] justify-center items-center z-[2] flex flex-col font-Changeling text-sm "
+                  : "hidden"
+              }
+            >
+              <motion.div
+                key={"tokenswap"}
+                transition={{
+                  duration: 0.5,
+                  delay: 1,
+                }}
+                initial={{
+                  opacity: 0,
+                  y: -20,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                exit={{
+                  opacity: 0,
+                  y: -20,
+                }}
+                className="text-white  justify-center items-center flex z-[2] font-Changeling text-3xl"
+              >
+                <p className="text-2xl "> TOKEN SWAP </p>
+              </motion.div>
+              {/* <p className="mt-12"> 13 DIGIT CARD FOR CRYFT CARD </p> */}
+              <div className="flex justify-center content-center text-white w-[90%]">
+                <input
+                  className="lg:text-xl md:text-xl p-[1rem] bg-[#ffffff17] placeholder:text-gray-300  placeholder:text-center active:outline-none  text-sm mt-8 z-10  content-center"
+                  placeholder="10234.304267 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; CRYFT"
+                />
+              </div>
+              {/* <div className="relative lg:-mt-9 md:-mt-9 -mt-6 h-10 lg:w-fit md:w-fit w-[70%]">
+              <Image layout="" src={img6} />
+            </div> */}
+              {/* <div className="relative lg:flex md:flex hidden cursor-pointer text-sm -mt-11">
+            <p className="ml-96">
+              *COST ZERO GAS <br /> TO REDEEM
+            </p>
+            </div> */}
+
+              <div className="relative lg:flex md:flex hidden text-3xl z-[1] mt-5 text-regal-blue font-Changeling">
+                <p className="text-white">FOR</p>
+              </div>
+              <div className="flex justify-center content-center text-white w-[90%]">
+                <input
+                  className="lg:text-xl md:text-xl bg-[#ffffff17] p-[1rem] placeholder:text-gray-300  placeholder:text-center active:outline-none  text-sm mt-8 z-10  content-center"
+                  placeholder="10234.304267 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; BNB"
+                />
+              </div>
+              {/* <div className="relative lg:-mt-9 md:-mt-9 -mt-6 h-10 lg:w-fit md:w-fit w-[70%]">
+              <Image layout="" src={img6} />
+            </div> */}
+              <div className="lg:mr-72 md:mr-72 mr-28 lg:mb-0 md:mb-0 mb-3 lg:text-lg md:text-lg text-xs">
+                EST.BEFORE FEES
+              </div>
+
+              <div className=" flex cursor-pointer  text-xl ">
+                <button className="bg-regal-blue tracking-widest text-[14px] py-2 px-12 rounded-2xl">
+                  SWAP
+                </button>
+              </div>
+              {/* <div className="relative lg:flex md:flex hidden lg:space-x-10 md:space-x-10 space-x-2 font-Changeling text-white md:text-2xl text-sm lg:text-2xl tracking-wide mt-4">
+            <p>1234567891234</p>
+            <p>1234567891234</p>
             </div>
-            <div className="relative flex cursor-pointer lg:text-3xl md:text-3xl text-xl lg:-mt-11 md:-mt-11 -mt-8">
-              <p className="cursor-pointer">SWAP</p>
+            <div className="relative lg:flex md:flex hidden lg:space-x-10 md:space-x-10 space-x-2  font-Changeling font-light text-white md:text-2xl text-sm lg:text-2xl tracking-wide">
+            <p>1234567891234</p>
+            <p>1234567891234</p>
+            </div> */}
             </div>
-            {/* <div className="relative lg:flex md:flex hidden lg:space-x-10 md:space-x-10 space-x-2 font-Changeling text-white md:text-2xl text-sm lg:text-2xl tracking-wide mt-4">
-            <p>1234567891234</p>
-            <p>1234567891234</p>
-          </div>
-          <div className="relative lg:flex md:flex hidden lg:space-x-10 md:space-x-10 space-x-2  font-Changeling font-light text-white md:text-2xl text-sm lg:text-2xl tracking-wide">
-            <p>1234567891234</p>
-            <p>1234567891234</p>
-          </div> */}
-          </div>
+          )}
         </div>
       )}
       <div

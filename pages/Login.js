@@ -7,8 +7,8 @@ const Login = () => {
   return (
     <>
       <Link href="/LoginB">
-        <div className="bg-Login h-[100vh] bg-cover bg-center bg-no-repeat  flex flex-col ">
-          <div className="text-white text-center w-[50%] m-auto justify-center items-center">
+        <div className="bg-Login md:h-[100vh] bg-cover bg-center bg-no-repeat   flex flex-col ">
+          <div className="text-white text-center md:w-[50%] w-[75%] m-auto justify-center md:py-0 py-12 items-center">
             <div className="lg:mt-16 md:mt-20 mt-20">
               <motion.h1
                 initial={{
@@ -85,7 +85,7 @@ const Login = () => {
               >
                 TAP ON THE SCREEN TO PROCEED
               </motion.h1>
-              <p className=" lg:mx-32 md:mx-12 custommd:-mt-16 mt-5  md:mt-16 lg:mt-16 sm:mt-24 mx-2 lg:text-[11px] md:text-[12px] text-[11px] text-justify">
+              <p className=" lg:mx-32 md:mx-12 custommd:-mt-16 mt-5  md:mt-16 lg:mt-16 sm:mt-24 mx-2 lg:text-[11px] md:text-[12px] text-[10px] text-justify">
                 DISCLAIMER The information provided on this website does not
                 constitute investment advice, financial advice, trading advice,
                 or any other sort of advice and you should not treat any of the
